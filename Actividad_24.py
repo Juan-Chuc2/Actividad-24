@@ -1,6 +1,11 @@
 def saludar():
     return "----Bienvenido----"
 
+def factorial(numero):
+    if numero ==0 or numero==1:
+        return 1
+    else:
+        return numero * factorial(numero-1)
 while True:
     print("=MENU==")
     print("1. Calcular Factorial")
@@ -15,3 +20,9 @@ while True:
     match option:
         case "1":
             print("--Factorial--")
+            numero = int(input("Ingrese el numero a calcular: "))
+            print(factorial(numero))
+
+        case "2":
+            print("--Suma N numeros--")
+
