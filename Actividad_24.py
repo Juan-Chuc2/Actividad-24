@@ -25,6 +25,12 @@ def contar_letra(palabra, letra):
         return 0
     else:
         return (1 if palabra[0] == letra else 0) + contar_letra(palabra[1:], letra)
+
+def potencia(base, exponente):
+    if exponente == 0:
+        return 1
+    else:
+        return base * potencia(base, exponente - 1)
 while True:
     print("MENU")
     print("1. Calcular Factorial")
@@ -57,4 +63,10 @@ while True:
             palabra = input("Ingrese una palabra: ").strip()
             letra = input("Ingrese la letra a buscar: ").strip()
             print(f"La letra '{letra}' aparece {contar_letra(palabra, letra)} veces.")
+
+        case "6":
+            print("--Calcular Exponente--")
+            base = int(input("Ingrese la base: "))
+            exponente = int(input("Ingrese el exponente: "))
+            print(f"{base}^{exponente} =", potencia(base, exponente))
 
