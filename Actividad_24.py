@@ -13,6 +13,13 @@ def suma_n(numero):
     else:
         return numero+suma_n(numero-1)
 
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
 def contar_letra(palabra, letra):
     if not palabra:
         return 0
@@ -39,6 +46,11 @@ while True:
             print("--Suma N numeros--")
             numero = int(input("Ingrese el numero a calcular: "))
             print(suma_n(numero))
+
+        case "3":
+            print("--FIBONACCI--")
+            n = int(input("Ingrese un número entero positivo: "))
+            print(f"Fibonacci({n}) =", fibonacci(n))
 
         case "4":
             print("--Calcular N-enesimo--")
