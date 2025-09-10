@@ -26,11 +26,19 @@ def contar_letra(palabra, letra):
     else:
         return (1 if palabra[0] == letra else 0) + contar_letra(palabra[1:], letra)
 
+def invertir_cadena(cadena):
+    if not cadena:
+        return ""
+    else:
+        return invertir_cadena(cadena[1:]) + cadena[0]
+
 def potencia(base, exponente):
     if exponente == 0:
         return 1
     else:
         return base * potencia(base, exponente - 1)
+
+saludar()
 while True:
     print("MENU")
     print("1. Calcular Factorial")
@@ -44,29 +52,36 @@ while True:
     option = input("Ingrese una opcion (1-7): ")
     match option:
         case "1":
-            print("--Factorial--")
+            print("\n--Factorial--")
             numero = int(input("Ingrese el numero a calcular: "))
             print(factorial(numero))
 
         case "2":
-            print("--Suma N numeros--")
+            print("\n--Suma N numeros--")
             numero = int(input("Ingrese el numero a calcular: "))
             print(suma_n(numero))
 
         case "3":
-            print("--FIBONACCI--")
+            print("\n--FIBONACCI--")
             n = int(input("Ingrese un número entero positivo: "))
             print(f"Fibonacci({n}) =", fibonacci(n))
 
         case "4":
-            print("--Calcular N-enesimo--")
+            print("\n--Calcular N-enesimo--")
             palabra = input("Ingrese una palabra: ").strip()
             letra = input("Ingrese la letra a buscar: ").strip()
             print(f"La letra '{letra}' aparece {contar_letra(palabra, letra)} veces.")
 
+        case "5":
+            print("\n--Invertir Cadena--")
+            cadena = input("Ingrese una cadena de texto: ")
+            print("Cadena invertida:", invertir_cadena(cadena))
+
         case "6":
-            print("--Calcular Exponente--")
+            print("\n--Calcular Exponente--")
             base = int(input("Ingrese la base: "))
             exponente = int(input("Ingrese el exponente: "))
             print(f"{base}^{exponente} =", potencia(base, exponente))
+
+
 
