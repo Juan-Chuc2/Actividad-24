@@ -7,11 +7,17 @@ def factorial(numero):
     else:
         return numero * factorial(numero-1)
 
-def suma_n(numero1):
-    if numero1 ==0:
+def suma_n(numero):
+    if numero ==0:
         return 0
     else:
-        return numero1+suma_n(numero1-1)
+        return numero+suma_n(numero-1)
+
+def contar_letra(palabra, letra):
+    if not palabra:
+        return 0
+    else:
+        return (1 if palabra[0] == letra else 0) + contar_letra(palabra[1:], letra)
 while True:
     print("MENU")
     print("1. Calcular Factorial")
@@ -31,6 +37,12 @@ while True:
 
         case "2":
             print("--Suma N numeros--")
-            numero1 = int(input("Ingrese el numero a calcular: "))
-            print(suma_n(numero1))
+            numero = int(input("Ingrese el numero a calcular: "))
+            print(suma_n(numero))
+
+        case "4":
+            print("--Calcular N-enesimo--")
+            palabra = input("Ingrese una palabra: ").strip()
+            letra = input("Ingrese la letra a buscar: ").strip()
+            print(f"La letra '{letra}' aparece {contar_letra(palabra, letra)} veces.")
 
