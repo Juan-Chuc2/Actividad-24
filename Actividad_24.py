@@ -83,5 +83,10 @@ while True:
             exponente = int(input("Ingrese el exponente: "))
             print(f"{base}^{exponente} =", potencia(base, exponente))
 
+        case "7":
+            print("GRACIAS POR USAR EL PROGRAMA!!")
+            break
 
+        case _:
+            print("Error vuelva a intentar con un caracter valido")
 
